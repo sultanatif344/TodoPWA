@@ -1,0 +1,21 @@
+module.exports={
+    pwa:{
+        workboxPluginMode:'GenerateSW',
+        workboxOptions:{
+            runtimeCaching:[
+                {
+                    urlPattern:RegExp(['https://console.firebase.google.com/u/0/project/tododata-a16f1/database/firestore/data~2Ftodos~2FYBVw2fHsQh5zvSGIQEk0','https://console.firebase.google.com/u/0/project/tododata-a16f1/authentication/users']),
+                    handler:'networkFirst',
+                    options:{
+                        networkTimeoutSeconds:20,
+                        cacheName:'api-cache',
+                        cacheableResponse:{
+                            statuses:[0,200]
+                        }
+                        
+                    }
+                }
+            ]
+        }
+    }
+}
